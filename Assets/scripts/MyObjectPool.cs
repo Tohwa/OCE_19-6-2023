@@ -12,7 +12,7 @@ public class MyObjectPool<T>where T : MonoBehaviour, IPoolable<T>
         prefab = _prefab;
         for(int i = 0; i < _size; i++)
         {
-            T temp = GameObject.Instantiate(_prefab, _parent).GetComponent<T>();
+            T temp = GameObject.Instantiate(_prefab).GetComponent<T>();
             temp.Initialize(this);
             ReturnItem(temp);
         }
